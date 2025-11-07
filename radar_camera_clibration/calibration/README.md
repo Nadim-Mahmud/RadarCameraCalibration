@@ -35,6 +35,7 @@
 - **Matching (Association)**
 
   - Choose matching cues: spatial proximity, motion trajectory, Doppler/signature, or reflectivity.
+  - We have used april tag to detect images.
   - For each camera detection (object bbox / keypoint), find nearest projected radar point(s) within a threshold (euclidean / Mahalanobis).
   - Use temporal windowing around aligned timestamps if uncertainty remains.
   - Optionally apply data-association algorithms (Nearest Neighbor, Hungarian, or probabilistic filters).
