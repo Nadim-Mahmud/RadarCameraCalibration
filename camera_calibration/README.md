@@ -1,0 +1,3 @@
+- Extract image using `ffmpeg -i input_video.mp4 frames/frame_%04d.png` command
+- Clean frames and only keep relevnet frames
+- Run camera calibration `pyton3 cameraCalibration.py`. This code is copied from [`here`](https://github.com/spmallick/learnopencv/tree/master/CameraCalibration)
