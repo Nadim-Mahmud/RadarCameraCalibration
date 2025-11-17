@@ -1,1 +1,22 @@
-{"session_start_ms":1762374447197,"session_end_ms":1762374488420,"video":{"file":"data-2025-11-05-14-27-27.197813-Scooter-SLESP5003.mp4","start_ms":1762374447198,"frame_rate":"10","end_ms":1762374483153},"audio":{"file":"data-2025-11-05-14-27-27.197813-Scooter-SLESP5003.wav","start_ms":1762374447199,"format":"S16_LE","samp_rate":"44100","end_ms":1762374483169},"radar":{"file":"data-2025-11-05-14-27-27.197813-Scooter-SLESP5003.bin","start_ms":1762374450898,"end_ms":1762374488420}}
+{
+  "session_start_ms": 1762374447197,
+  "session_end_ms": 1762374488420,
+  "video": {
+    "file": "data-2025-11-05-14-27-27.197813-Scooter-SLESP5003.mp4",
+    "start_ms": 1762374447198,
+    "frame_rate": "10",
+    "end_ms": 1762374483153
+  },
+  "audio": {
+    "file": "data-2025-11-05-14-27-27.197813-Scooter-SLESP5003.wav",
+    "start_ms": 1762374447199,
+    "format": "S16_LE",
+    "samp_rate": "44100",
+    "end_ms": 1762374483169
+  },
+  "radar": {
+    "file": "data-2025-11-05-14-27-27.197813-Scooter-SLESP5003.bin",
+    "start_ms": 1762374450898,
+    "end_ms": 1762374488420
+  }
+}

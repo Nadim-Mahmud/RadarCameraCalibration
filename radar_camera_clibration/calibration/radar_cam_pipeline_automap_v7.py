@@ -13,7 +13,7 @@ import numpy as np
 import cv2
 
 # Your existing parser
-from parse_mmwave_with_timestamps2 import parse as parse_mmwave_bin
+from mmwave_bin_parser import parse as parse_mmwave_bin
 
 # -------------------------------------------------------------------------
 # ArUco dictionaries
@@ -123,6 +123,35 @@ def sync_video_to_radar(video_ts: List[int], radar_ts_by_frame: Dict[int, int]):
             best_err = abs(r_ts[j] - t)
         map_vid_to_rad.append(best)
     return r_keys, map_vid_to_rad
+
+
+def find_frame_with_tags(video_path: Path, start_idx: int, search_frames: int, want_tags: int, dict_hint: str = "auto"):
+    """
+    Searches video frames starting from start_idx to find one containing at least 'want_tags' markers.
+    Returns (frame_index, frame, centers, used_dict_name)
+    """
+    cap = cv2.VideoCapture(str(video_path))
+    total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    best = (None, None, [], None)  # index, frame, centers, dict
+
+    for offset in range(-search_frames, search_frames + 1):
+        idx = start_idx + offset
+        if idx < 0 or idx >= total
+            continue
+
+        cap.set(cv2.CAP_PROP_POS_FRAMES, idx)
+        ok, frame = cap.read()
+        if not ok:
+            continue
+
+        centers, used_dict, score = detect_centers_with_auto_dict(frame, want=want_tags, dict_hint=dict_hint)
+        if centers is not None and len(centers) >= want_tags:
+            best = (idx, frame, centers, used_dict)
+            break
+
+    cap.release()
+    return best
+
 
 # -------------------------------------------------------------------------
 # Tag detection and association

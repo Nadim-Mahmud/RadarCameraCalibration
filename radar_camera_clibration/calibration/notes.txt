@@ -1,0 +1,3 @@
+- Reduced RADAR_INTENSITY_PERCENTILE = 90
+- high_intensity_mask = (intensities > 50) for experiment
+- Used top 5 claster from dbscan
